@@ -350,6 +350,23 @@ function scrollToSub(){
     document.getElementById("sub").scrollIntoView({behavior:"smooth"});
 }
 </script>
+<!-- عداد الزوار -->
+<div style="position:fixed;bottom:10px;left:10px;background:#000;color:#fff;padding:10px;border-radius:10px;font-size:14px;">
+    عدد الزيارات: <span id="visitorCount">0</span>
+</div>
 
+<script>
+// عداد زوار بسيط
+let count = localStorage.getItem("visits");
+
+if(count){
+    count = parseInt(count) + 1;
+}else{
+    count = 1;
+}
+
+localStorage.setItem("visits", count);
+document.getElementById("visitorCount").innerText = count;
+</script>
 </body>
 </html>
